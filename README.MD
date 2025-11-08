@@ -25,55 +25,6 @@ A **Machine Learning + Heuristic-based security detection system** that identifi
 
 ---
 
-## 🗂️ Folder Structure  
-
-Phishing_Spam_Detector/
-│
-├── datasets/
-
-│ ├── phishing_site_urls.csv
-
-│ ├── Phishing_Legitimate_full.csv
-
-│ ├── spam_emails.csv
-
-│ └── domains_reputation.csv
-
-│
-├── phishing_model/
-
-│ ├── phishing_model.pkl
-
-│ ├── phishing_real_model.pkl
-
-│ ├── phishing_real_scaler.pkl
-
-│ ├── phishing_scaler.pkl
-
-│ ├── train_phishing_model.py
-
-│ ├── train_phishing_real_dataset.py
-
-│ └── url_features.py
-
-│
-├── spam_model/
-
-│ ├── spam_model.pkl
-
-│ ├── spam_vectorizer.pkl
-
-│ └── train_spam_model.py
-
-│
-├── app.py # Streamlit Web App
-
-├── requirements.txt # Dependencies
-
-└── README.md # Project Documentation
-
-
-
 
 ## 🌐 How It Works  
 
