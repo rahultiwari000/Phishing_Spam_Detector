@@ -53,10 +53,7 @@ Phishing_Spam_Detector/
 ├── requirements.txt # Dependencies
 └── README.md # Project Documentation
 
-yaml
-Copy code
 
----
 
 ## 🌐 How It Works  
 
