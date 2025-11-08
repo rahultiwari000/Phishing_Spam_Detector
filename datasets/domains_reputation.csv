@@ -1,0 +1,9 @@
+domain,reputation
+google.com,good
+github.com,good
+paypal.com,good
+facebook.com,good
+login-google.com,bad
+secure-paypal.net,bad
+update-paypal.info,bad
+example-notgood.com,not_good
