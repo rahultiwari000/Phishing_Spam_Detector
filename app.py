@@ -7,9 +7,7 @@ from phishing_model.url_features import extract_features
 
 warnings.filterwarnings("ignore")
 
-# ----------------------------------
-# 🔧 Load Models
-# ----------------------------------
+
 PHISH_MODEL_PATH = os.path.join("phishing_model", "phishing_model.pkl")
 PHISH_SCALER_PATH = os.path.join("phishing_model", "phishing_scaler.pkl")
 PHISH_REAL_MODEL_PATH = os.path.join("phishing_model", "phishing_real_model.pkl")
@@ -24,15 +22,11 @@ phish_real_scaler = joblib.load(PHISH_REAL_SCALER_PATH)
 spam_model = joblib.load(SPAM_MODEL_PATH)
 spam_vectorizer = joblib.load(SPAM_VECTORIZER_PATH)
 
-# ----------------------------------
-# 🧠 Initialize Page State
-# ----------------------------------
+
 if "page" not in st.session_state:
     st.session_state.page = "home"
 
-# ----------------------------------
-# 🧩 Detection Functions
-# ----------------------------------
+
 def check_url(url: str):
     try:
         features = extract_features(url)
@@ -74,9 +68,7 @@ def check_real_features(values_raw):
     except Exception as e:
         return "⚠️ Error", f"Error analyzing dataset row: {e}"
 
-# ----------------------------------
-# 🖥️ PAGE 1 - HOME (Dashboard)
-# ----------------------------------
+
 if st.session_state.page == "home":
     st.markdown("""
         <h2 style='color:#00c4ff; margin-bottom:0;'>🛡️ Detect & Secure</h2>
@@ -113,9 +105,7 @@ if st.session_state.page == "home":
         </div>
     """, unsafe_allow_html=True)
 
-# ----------------------------------
-# 🌐 PAGE 2 - URL ANALYZER
-# ----------------------------------
+
 elif st.session_state.page == "url":
     st.title("🌍 Website URL Checker")
     url = st.text_input("Enter the website URL:")
@@ -127,9 +117,7 @@ elif st.session_state.page == "url":
         st.session_state.page = "home"
         st.rerun()
 
-# ----------------------------------
-# 📧 PAGE 3 - EMAIL ANALYZER
-# ----------------------------------
+
 elif st.session_state.page == "email":
     st.title("📧 Email Spam Detector")
     email_text = st.text_area("Paste the email content below:")
@@ -141,9 +129,7 @@ elif st.session_state.page == "email":
         st.session_state.page = "home"
         st.rerun()
 
-# ----------------------------------
-# 📊 PAGE 4 - DATASET ANALYZER
-# ----------------------------------
+
 elif st.session_state.page == "dataset":
     st.title("📊 Phishing Dataset Row Checker")
     row_data = st.text_area("Paste one row of numeric dataset values:")
